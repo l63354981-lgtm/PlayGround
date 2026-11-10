@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#07141b" />
+  <title>TOQUE — Futebol 3D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <div id="scene" aria-label="Campo de futebol 3D"></div>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">T</span><span>TOQUE<span class="brand-dot">.</span></span><small>STREET LEAGUE</small></div>
+      <div class="match-card">
+        <div class="team-label home"><i></i><span>AZUL FC</span></div>
+        <div class="score"><span id="score-blue">0</span><b>:</b><span id="score-red">0</span></div>
+        <div class="team-label away"><span>CORAL SC</span><i></i></div>
+      </div>
+      <div class="clock-wrap"><span class="live-dot"></span><span id="clock">01:30</span><small>1º TEMPO</small></div>
+    </header>
+    <div class="match-tag"><span class="tag-icon">✦</span><div><strong>PARTIDA RÁPIDA</strong><small>CAMPO CENTRAL · NOITE</small></div></div>
+    <div class="status-pill" id="status-pill"><span></span><b>VOCÊ ESTÁ COM A BOLA</b></div>
+    <section class="intro" id="intro">
+      <div class="intro-panel">
+        <div class="eyebrow"><span></span> BEM-VINDO AO CAMPO</div>
+        <h1>JOGUE<br><em>DO SEU JEITO.</em></h1>
+        <p>Domine a bola. Encontre o espaço.<br>Faça a arquibancada levantar.</p>
+        <button class="primary-btn" id="start-btn"><span>COMEÇAR PARTIDA</span><b>↗</b></button>
+        <div class="intro-foot"><span>90 SEGUNDOS</span><i></i><span>5 CONTRA 5</span><i></i><span>3D AO VIVO</span></div>
+      </div>
+      <div class="intro-tip"><span>01</span><div><b>O CAMPO É SEU</b><small>Controles simples. Jogo rápido.</small></div></div>
+    </section>
+    <section class="result-modal hidden" id="result-modal">
+      <div class="result-card"><div class="eyebrow"><span></span> FIM DE JOGO</div><h2 id="result-title">QUE PARTIDA!</h2><div class="result-score"><b id="result-blue">0</b><span>—</span><b id="result-red">0</b></div><p id="result-copy">A torcida quer mais.</p><button class="primary-btn" id="again-btn"><span>JOGAR DE NOVO</span><b>↻</b></button></div>
+    </section>
+    <div class="bottom-hud">
+      <div class="control-hint desktop-hint"><span class="keycap">W</span><span class="keycap">A</span><span class="keycap">S</span><span class="keycap">D</span><small>MOVER</small><span class="hint-divider"></span><span class="keycap space">ESPAÇO</span><small>CHUTAR</small></div>
+      <div class="power-box"><div class="power-label"><span>FORÇA DO CHUTE</span><b id="power-number">0%</b></div><div class="power-track"><i id="power-fill"></i></div></div>
+      <div class="mobile-controls" id="mobile-controls">
+        <div class="joy-wrap" id="joy"><div class="joy-ring"><div class="joy-knob" id="joy-knob"></div></div><span>MOVER</span></div>
+        <button class="shoot-btn" id="shoot-btn" aria-label="Chutar"><span class="ball-icon">⚽</span><b>CHUTAR</b></button>
+      </div>
+      <div class="bottom-note"><span class="sound-icon">♪</span> <span>JOGUE LIMPO. JOGUE BONITO.</span></div>
+    </div>
+    <div class="toast" id="toast"></div>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
